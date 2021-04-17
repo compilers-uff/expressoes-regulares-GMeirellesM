@@ -16,14 +16,14 @@ class AFD(Automato.Automato):
 
     def delta_estr(self, estado, palavra):
 
-        if list(estado)[0] not in self.delta:
-            return None
-
         if list(estado)[0] not in self.estados:
             raise Exception("Estado não existente")
 
         if palavra == None or palavra == '':
             return estado
+
+        if list(estado)[0] not in self.delta:
+            return None
 
         primLetra = None
         restoPalavra = None
